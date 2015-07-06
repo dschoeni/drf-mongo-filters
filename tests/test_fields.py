@@ -1,6 +1,6 @@
 from datetime import datetime
 from unittest import TestCase
-from unittest import mock
+import mock
 from django.http import QueryDict
 
 from rest_framework import fields

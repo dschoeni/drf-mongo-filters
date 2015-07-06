@@ -1,10 +1,9 @@
 from collections import OrderedDict
 from unittest import TestCase
-from unittest import mock
 from django.http import QueryDict
 from rest_framework.exceptions import ValidationError
 from mongoengine import Document, fields
-
+import mock
 
 from drf_mongo_filters import filters
 from drf_mongo_filters import Filterset, ModelFilterset

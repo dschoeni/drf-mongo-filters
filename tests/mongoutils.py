@@ -27,7 +27,7 @@ class TestRunner(DiscoverRunner):
 
     def setup_databases(self, *args, **kwargs):
         for alias, params in self._iter_test_databases():
-            disconnect(alias)
+            #disconnect(alias)
             print("Connecting test database for alias '%s': %s" % (alias, params['name']))
             connect(params.pop('name'), alias=alias, **params)
         return super(TestRunner, self).setup_databases(*args, **kwargs)
@@ -37,5 +37,5 @@ class TestRunner(DiscoverRunner):
             connection = get_connection(alias)
             print("Dropping test database for alias '%s': %s" % (alias, params['name']))
             connection.drop_database(params['name'])
-            disconnect(alias)
+            #connection.disconnect(alias)
         return super(TestRunner, self).teardown_databases(*args, **kwargs)

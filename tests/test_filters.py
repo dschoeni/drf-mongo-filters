@@ -3,7 +3,7 @@ from uuid import uuid4
 from bson import ObjectId
 
 from unittest import TestCase
-from unittest import mock
+import mock
 from django.http import QueryDict
 from rest_framework import fields
 from rest_framework.exceptions import ValidationError

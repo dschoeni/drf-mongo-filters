@@ -260,7 +260,7 @@ class CompoundTests(QuerysetTesting, TestCase):
 
         class FS(Filterset):
             foo = filters.RangeFilter(child=fields.IntegerField(), source='f_int')
-            bar = filters.RangeFilter(child=fields.IntegerField(), lookup=('gt','lt'), source='f_int')
+            bar = filters.RangeFilter(child=fields.IntegerField(), lookup=('gt', 'lt'), source='f_int')
 
         fs = FS({'foo': {'min':5, 'max':11}})
         qs = fs.filter_queryset(SimpleDoc.objects.all())

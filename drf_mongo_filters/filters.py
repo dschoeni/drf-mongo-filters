@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 
 from mongoengine.queryset import transform
 from rest_framework import fields
+from qualname import qualname
 
 from .fields import  DateTime000Field, ListField, DictField, RangeField, GeoPointField,  ObjectIdField
 
@@ -88,7 +89,7 @@ class Filter():
         return { key: value }
 
     def __repr__(self):
-        return "%s(name='%s',lookup='%s')" % (self.__class__.__qualname__, self.name, self.lookup_type)
+        return "%s(name='%s',lookup='%s')" % (qualname(self.__class__), self.name, self.lookup_type)
 
 class BooleanFilter(Filter):
     VALID_LOOKUPS = (None, 'ne', 'exists')
@@ -157,7 +158,7 @@ class RangeFilter(Filter):
     def __init__(self, lookup=None, name=None, **kwargs):
         if lookup:
             self.lookup_types = lookup
-        super().__init__(name=name, **kwargs)
+        Filter.__init__(self, lookup=None, name=name, **kwargs)
 
     def filter_params(self, value):
         """ return filtering params """

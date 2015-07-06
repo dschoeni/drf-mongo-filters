@@ -1,5 +1,5 @@
 from unittest import TestCase
-from unittest import mock
+import mock
 from django.http import QueryDict
 from rest_framework.test import APIRequestFactory
 from rest_framework.generics import ListAPIView
