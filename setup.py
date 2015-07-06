@@ -7,7 +7,9 @@ setup(
     version="1.1",
     install_requires=["Django == 1.8",
                       "mongoengine >= 0.10",
-                      "djangorestframework >= 3.0"],
+                      "djangorestframework >= 3.0",
+                      "mock == 1.0.1",
+                      "qualname == 0.1.0"],
     # metadata for upload to PyPI
     author="Maxim Vasiliev",
     author_email="qwiglydee@gmail.com",
